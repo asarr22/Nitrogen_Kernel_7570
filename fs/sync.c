@@ -66,7 +66,7 @@ static struct workqueue_struct *intr_sync_wq;
 /* It prevents double allocation of intr_sync_wq */
 static DEFINE_MUTEX(intr_sync_wq_lock);
 
-static inline struct interruptible_sync_work *INTR_SYNC_WORK(struct work_struct *work) 
+static inline struct interruptible_sync_work *INTR_SYNC_WORK(struct work_struct *work)
 {
 	return container_of(work, struct interruptible_sync_work, work);
 }
