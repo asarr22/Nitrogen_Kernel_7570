@@ -91,6 +91,7 @@ FUNC_BUILD_KERNEL()
 	echo ""
 
 	rm -f $RDIR/arch/$ARCH/configs/tmp_defconfig
+	mv $RDIR/arch/$ARCH/boot/Image $RDIR/arch/$ARCH/boot/boot.img-zImage
 }
 
 FUNC_BUILD_DTB()
@@ -104,7 +105,7 @@ FUNC_BUILD_DTB()
 		DTSFILES="exynos7570-on5xelte_swa_open_00 exynos7570-on5xelte_swa_open_01
 				exynos7570-on5xelte_swa_open_02 exynos7570-on5xelte_swa_open_03"
 		;;
-	J400)
+	J330)
 		DTSFILES="exynos7570-j4lte_mea_open_00 exynos7570-j4lte_mea_open_01"
 		;;
 	*)
@@ -128,14 +129,14 @@ FUNC_BUILD_DTB()
 	echo "Generating dtb.img."
 	$RDIR/scripts/dtbtool/dtbtool -o "$OUTDIR/dtb.img" -d "$DTBDIR/" -s $PAGE_SIZE
 	echo "Done."
+	mv $RDIR/arch/$ARCH/boot/dtb.img $RDIR/arch/$ARCH/boot/boot.img-dtb
 }
 
 FUNC_BUILD_RAMDISK()
 {
 	echo ""
 	echo "Building Ramdisk"
-	mv $RDIR/arch/$ARCH/boot/Image $RDIR/arch/$ARCH/boot/boot.img-zImage
-	mv $RDIR/arch/$ARCH/boot/dtb.img $RDIR/arch/$ARCH/boot/boot.img-dtb
+	
 	
 	cd $RDIR/build
 	mkdir temp
@@ -191,7 +192,6 @@ MAIN()
 	FUNC_DELETE_PLACEHOLDERS
 	FUNC_BUILD_KERNEL
 	FUNC_BUILD_DTB
-	FUNC_BUILD_RAMDISK
 	END_TIME=`date +%s`
 	let "ELAPSED_TIME=$END_TIME-$START_TIME"
 	echo "Total compile time is $ELAPSED_TIME seconds"
