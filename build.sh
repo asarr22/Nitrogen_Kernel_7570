@@ -6,13 +6,17 @@
 # 
 # For Exynos 7570 SOC 
 #
+# 
+#
+#
+
 
 # SETUP
 # -----
 export ARCH=arm64
 export SUBARCH=arm64
 export BUILD_CROSS_COMPILE=/home/sarr/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-#CUSTOM GCC
+#CUSTOM TOOLCHAIN
 #export BUILD_CROSS_COMPILE=/home/sarr/gcc-linaro-7.4.1-2019.02-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
 export CROSS_COMPILE=$BUILD_CROSS_COMPILE
 export BUILD_JOB_NUMBER=`grep processor /proc/cpuinfo|wc -l`

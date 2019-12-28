@@ -2657,7 +2657,7 @@
      dev = "/dev/block/platform/13540000.dwmmc0/by-name/SYSTEM";
      type = "ext4";
      mnt_flags = "ro";
-     fsmgr_flags = "wait,verify";
+     fsmgr_flags = "wait";
     };
    };
   };
@@ -4795,7 +4795,7 @@
   battery,temp_table_data = <900 850 800 750 700 650 600 550 500 470 450 430 400 350 300 250
         200 150 100 50 0 (-30) (-50) (-100) (-150) (-200)>;
 
-  battery,input_current_limit = <1000 460 460 1000 480 900 1000 480 1000 0 820 820 820 1000 1000 0 0 400 700 1000 300 1000 1000 0 1667 1667 1000 1667 80 1800 1667 1400 1000 1000 820 820>;
+  battery,input_current_limit = <1300 460 460 1300 480 900 1000 480 1000 0 820 820 820 1300 1300 0 0 400 700 1000 300 1000 1300 0 1675 1675 1000 1675 80 1800 1675 1400 1000 1000 820 820>;
   battery,fast_charging_current = <1200 0 0 1200 800 1200 1000 800 1200 0 1200 1200 1200 1200 1200 0 0 400 700 1200 300 1000 1200 0 2550 2550 1000 2550 80 1800 1000 1400 0 1000 1200 1200>;
   battery,full_check_current_1st = <240 0 0 240 240 240 240 240 240 0 240 240 240 240 240 0 0 240 240 240 240 240 240 0 240 240 240 240 0 240 240 240 0 240 240 240>;
   battery,full_check_current_2nd = <120 0 0 120 120 120 120 120 120 0 120 120 120 120 120 0 0 120 120 120 120 120 120 0 120 120 120 120 0 120 120 120 0 120 120 120>;
@@ -4849,8 +4849,8 @@
   battery,chg_high_temp_1st = <530>;
   battery,chg_high_temp_2nd = <530>;
   battery,chg_high_temp_recovery = <525>;
-  battery,chg_charging_limit_current = <1300>;
-  battery,chg_charging_limit_current_2nd = <1300>;
+  battery,chg_charging_limit_current = <1500>;
+  battery,chg_charging_limit_current_2nd = <1500>;
   battery,chg_skip_check_capacity = <10>;
   battery,chg_skip_check_time = <600>;
 
@@ -4880,8 +4880,8 @@
   battery,recharging_total_time = <5400>;
   battery,charging_reset_time = <0>;
 
-  battery,chg_float_voltage = <4300>;
-  battery,chg_float_voltage2 = <4300>;
+  battery,chg_float_voltage = <4400>;
+  battery,chg_float_voltage2 = <4350>;
 
   battery,self_discharging_temp_block = <600>;
   battery,self_discharging_volt_block = <4250>;

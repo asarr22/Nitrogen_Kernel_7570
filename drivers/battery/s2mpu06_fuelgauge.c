@@ -1085,6 +1085,15 @@ static int s2mpu06_fuelgauge_parse_dt(struct s2mpu06_fuelgauge_data *fuelgauge)
 			__func__, i, fuelgauge->age_data_info[i].cell_character0[0],
 			fuelgauge->age_data_info[i].cell_character1[0], fuelgauge->raw_100_vbat[i]);
 	}
+
+	/* batt data version */
+	ret = of_property_read_u32_array(np, "battery,data_ver", &fuelgauge->info.data_ver, 1);
+	if (ret < 0) {
+		pr_err("Can get prop %s (%d)\n", "battery,data_ver", ret);
+		fuelgauge->info.data_ver = 0;
+		}
+	pr_info("%s = <%d>\n", "battery,data_ver", fuelgauge->info.data_ver);
+
 }
 #endif
 
@@ -1126,14 +1135,6 @@ static int s2mpu06_fuelgauge_parse_dt(struct s2mpu06_fuelgauge_data *fuelgauge)
 			"battery,full_check_current_2nd", i,
 			&pdata->charging_current[i].full_check_current_2nd);
 	}
-
-	/* batt data version */
-	ret = of_property_read_u32_array(np, "battery,data_ver", &fuelgauge->info.data_ver, 1);
-	if (ret < 0) {
-		pr_err("Can get prop %s (%d)\n", "battery,data_ver", ret);
-		fuelgauge->info.data_ver = 0;
-		}
-	pr_info("%s = <%d>\n", "battery,data_ver", fuelgauge->info.data_ver);
 
 	return 0;
 

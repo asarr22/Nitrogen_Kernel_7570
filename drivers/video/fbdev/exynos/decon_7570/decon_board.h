@@ -6,8 +6,8 @@
  * published by the Free Software Foundation.
  */
 
-#ifndef __DECON_DISPLAY_BOARD_HEADER__
-#define __DECON_DISPLAY_BOARD_HEADER__
+#ifndef __DECON_BOARD_H__
+#define __DECON_BOARD_H__
 
 #include <linux/device.h>
 
@@ -16,3 +16,4 @@ extern unsigned int lcdtype;
 void run_list(struct device *dev, const char *name);
 
 #endif
+

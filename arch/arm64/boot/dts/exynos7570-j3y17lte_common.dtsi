@@ -42,6 +42,23 @@
 		status = "okay";
 	};
 
+	firmware {
+		android {
+			compatible = "android,firmware";
+			fstab {
+				compatible = "android,fstab";
+				system {
+					compatible = "android,system";
+					dev = "/dev/block/platform/13540000.dwmmc0/by-name/SYSTEM";
+					type = "ext4";
+					mnt_flags = "ro";
+					fsmgr_flags = "wait,verify";
+				  };
+				
+			};
+		};
+	};
+	
 	dwmmc0@13540000 {
 		status = "okay";
 		num-slots = <1>;
@@ -643,7 +660,7 @@
 			stk,irq-gpio = <&gpa1 0 0x00>;
 			stk,regulator_divided = <1>;
 			stk,vdd_always_on = <0>;
-			stk,state-reg = <0x2d>;
+			stk,state-reg = <0x2c>;
 			stk,psctrl-reg = <0x71>;
 			stk,ledctrl-reg = <0xBF>;
 			stk,wait-reg = <0x03>;

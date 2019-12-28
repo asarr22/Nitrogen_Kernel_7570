@@ -82,9 +82,9 @@ static ssize_t param_write(struct file *f, const char __user *user_buf,
 		dbg_info("input is 0(zero). reset param to default\n");
 
 		list_for_each_entry(param, &params_list->node, node) {
-			if (param->ptr_type == 8)
+			if (param->ptr_type == U8_MAX)
 				memcpy(param->ptr_u08, param->org_u08, param->ptr_size * sizeof(u8));
-			else if (param->ptr_type == 32)
+			else if (param->ptr_type == U32_MAX)
 				memcpy(param->ptr_u32, param->org_u32, param->ptr_size * sizeof(u32));
 		}
 
@@ -144,9 +144,9 @@ static ssize_t param_write(struct file *f, const char __user *user_buf,
 	while ((token = strsep(&pbuf, ", "))) {
 		if (*token == '\0')
 			continue;
-		if (param->ptr_type == 8)
+		if (param->ptr_type == U8_MAX)
 			ret = kstrtou32(token, 16, &value);
-		else if (param->ptr_type == 32)
+		else if (param->ptr_type == U32_MAX)
 			ret = kstrtou32(token, 0, &value);
 		if (ret < 0 || end == ARRAY_SIZE(tbuf))
 			break;
@@ -177,7 +177,7 @@ static ssize_t param_write(struct file *f, const char __user *user_buf,
 		goto exit;
 	}
 
-	if (param->ptr_type == 8) {
+	if (param->ptr_type == U8_MAX) {
 		for (offset_w = 0; offset_w < end; offset_w++) {
 			param_old = param->ptr_u08[input_w + offset_w];
 			param_new = tbuf[2 + offset_w];
@@ -186,7 +186,7 @@ static ssize_t param_write(struct file *f, const char __user *user_buf,
 			dbg_info("[%2d] 0x%02x -> 0x%02x%s\n", input_w + offset_w, param_old, param_new, (param_old != param_new) ? " (!)" : "");
 			param->ptr_u08[input_w + offset_w] = param_new;
 		}
-	} else if (param->ptr_type == 32) {
+	} else if (param->ptr_type == U32_MAX) {
 		for (offset_w = 0; offset_w < end; offset_w++) {
 			param_old =  param->ptr_u32[input_w + offset_w];
 			param_new = tbuf[2 + offset_w];
@@ -217,13 +217,13 @@ static int param_show(struct seq_file *m, void *unused)
 	seq_puts(m, "\n");
 
 	i = 0;
-	if (params_list->max_type == 8) {
+	if (params_list->max_type == U8_MAX) {
 		list_for_each_entry(param, &params_list->node, node) {
 			changed = memcmp(param->org_u08, param->ptr_u08, param->ptr_size);
 			seq_printf(m, "%2d| %*ph%s\n", i, param->ptr_size, param->ptr_u08, changed ? " (!)" : "");
 			i++;
 		}
-	} else if (params_list->max_type == 32) {
+	} else if (params_list->max_type == U32_MAX) {
 		list_for_each_entry(param, &params_list->node, node) {
 			changed = memcmp(param->org_u32, param->ptr_u32, param->ptr_size);
 
@@ -339,10 +339,10 @@ static int add_param(struct params_list_info *params_list, void *ptr, u32 ptr_ty
 
 	param = kzalloc(sizeof(struct param_info), GFP_KERNEL);
 
-	if (ptr_type == 8) {
+	if (ptr_type == U8_MAX) {
 		param->ptr_u08 = (u8 *)ptr;
 		param->org_u08 = kmemdup(ptr, ptr_size * sizeof(u8), GFP_KERNEL);
-	} else if (ptr_type == 32) {
+	} else if (ptr_type == U32_MAX) {
 		param->ptr_u32 = (u32 *)ptr;
 		param->org_u32 = kmemdup(ptr, ptr_size * sizeof(u32), GFP_KERNEL);
 	}
@@ -401,7 +401,7 @@ void init_debugfs_param(const char *name, void *ptr, u32 ptr_type, u32 sum_size,
 		return;
 	}
 
-	if (ptr_type != 8 && ptr_type != 32) {
+	if (ptr_type != U8_MAX && ptr_type != U32_MAX) {
 		dbg_info("ptr_type(%d) invalid\n", ptr_type);
 		return;
 	}
@@ -432,9 +432,9 @@ void init_debugfs_param(const char *name, void *ptr, u32 ptr_type, u32 sum_size,
 	}
 
 	for (i = 0; i < sum_size; i += ptr_unit) {
-		if (ptr_type == 8)
+		if (ptr_type == U8_MAX)
 			add_param(params_list, (u8 *)ptr + i, ptr_type, (i + ptr_unit < sum_size) ? ptr_unit : sum_size - i);
-		else if (ptr_type == 32)
+		else if (ptr_type == U32_MAX)
 			add_param(params_list, (u32 *)ptr + i, ptr_type, (i + ptr_unit < sum_size) ? ptr_unit : sum_size - i);
 	}
 }

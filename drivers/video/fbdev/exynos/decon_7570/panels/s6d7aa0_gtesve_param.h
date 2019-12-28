@@ -17,38 +17,33 @@ struct lcd_seq_info {
 	unsigned int	sleep;
 };
 
-struct i2c_rom_data {
-	u8 addr;
-	u8 val;
-};
-
 /* 2017.07.04 RE: RE: RE: RE: RE: RE: RE: LP8558  mail */
-static const struct i2c_rom_data LP8558_eprom_drv_arr[] = {
-	{0xA1, 0x6F},
-	{0xA5, 0x34},
-	{0xA6, 0x80},
-	{0xA7, 0xF6},
-	{0xA9, 0x80},
-	{0x16, 0x07},
+static u8 LP8558_eprom_drv_arr[] = {
+	0xA1, 0x6F,
+	0xA5, 0x34,
+	0xA6, 0x80,
+	0xA7, 0xF6,
+	0xA9, 0x80,
+	0x16, 0x07,
 };
 
-static const struct i2c_rom_data LP8558_eprom_drv_arr_off[] = {
-	{0x00, 0x00},
+static u8 LP8558_eprom_drv_arr_off[] = {
+	0x00, 0x00,
 };
 
 //Date : 2017-08-02 10:47 (GMT+9)
 //Title : FW: RE: ISL98608
-static const struct i2c_rom_data ISL98608_eprom_drv_arr[] = {
-	{0x04, 0x00},
-	{0x05, 0x87},
-	{0x06, 0x08},
-	{0x08, 0x00},
-	{0x09, 0x00},
-	{0x0D, 0x34},
+static u8 ISL98608_eprom_drv_arr[] = {
+	0x04, 0x00,
+	0x05, 0x87,
+	0x06, 0x08,
+	0x08, 0x00,
+	0x09, 0x00,
+	0x0D, 0x34,
 };
 
-static const struct i2c_rom_data ISL98608_eprom_drv_arr_off[] = {
-	{0x00, 0x00},
+static u8 ISL98608_eprom_drv_arr_off[] = {
+	0x00, 0x00,
 };
 
 static const unsigned char SEQ_01_PARAM[] = {

@@ -43,7 +43,7 @@ int dsim_panel_ops_init(struct dsim_device *dsim)
 	return ret;
 }
 
-int register_lcd_driver(struct mipi_dsim_lcd_driver *drv)
+int replace_lcd_driver(struct mipi_dsim_lcd_driver *drv)
 {
 	struct device_node *node;
 	int count = 0;
