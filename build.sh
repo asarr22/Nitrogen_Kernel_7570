@@ -2,7 +2,7 @@
 #
 # Thanks to Tkkg1994 and djb77 for the script
 #
-# Nitrogen Build Script v1 by Asarre
+# Nitrogen Build Script v2 by Asarre
 # 
 # For Exynos 7570 SOC 
 #
@@ -37,7 +37,7 @@ DEFCONFIG=on5xelte_00_defconfig
 DEFCONFIG_S7EDGE=on5xelte_00_defconfig
 DEFCONFIG_S7FLAT=on5xelte_00_defconfig
 
-export K_VERSION="v1.1"
+export K_VERSION="v2"
 export K_NAME="Nitrogen"
 export REVISION="official"
 export KBUILD_BUILD_VERSION="1"
