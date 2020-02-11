@@ -15,7 +15,7 @@
 		compatible = "samsung,s2mpu06-fuelgauge";
 		fuelgauge,fuel_alert_soc = <1>;
 		fuelgauge,capacity_max = <1000>;
-		fuelgauge,capacity_max_margin = <200>;
+		fuelgauge,capacity_max_margin = <70>;
 		fuelgauge,capacity_min = <0>;
 		fuelgauge,capacity_calculation_type = <28>;
 		fuelgauge,type_str = "SDI";
@@ -130,12 +130,10 @@
 			0x3D 0x3D 0x3E 0x3F 0x3F 0x3F 0x40 0x40 0x41 0x42
 			0x44 0x43 0x66 0x9A
 			/* Cell character 1, 0x0F ~ 0x13 */
-			0x1F 0x60 0x09 0x00 0xEC
+			0x1F 0x60 0x09 0x00 0x00
 			>;
-
-		//fuelgauge,ocv_table = <0 3650 3760 3890>;
-		//fuelgauge,offset_table = <55 50 45 40>;
-		fuelgauge,raw_100_vbat = <4273 4245 4226 4207 4159>;
+		fuelgauge,ocv_table = <0 3650 3760 3890>;
+		fuelgauge,offset_table = <55 50 45 40>;
 	};
 
 	battery {
@@ -163,7 +161,7 @@
 		battery,temp_table_data = <900 850 800 750 700 650 600 550 500 470 450 430 400 350 300 250
 								200 150 100 50 0 (-30) (-50) (-100) (-150) (-200)>;
 
-		battery,input_current_limit = <1300 460 460 1300 480 900 1000 480 1000 0 820 820 820 1300 1300 0 0 400 700 1000 300 1000 1300 0 1675 1675 1000 1675 80 1800 1675 1400 1000 1000 820 820>;
+		battery,input_current_limit = <1370 460 460 1370 480 900 1370 480 1370 0 820 820 820 1370 1370 0 0 400 700 1370 300 1370 1370 0 1667 1667 1370 1667 80 1800 1667 1400 1370 1370 820 820>;
 		battery,fast_charging_current = <1200 0 0 1200 800 1200 1000 800 1200 0 1200 1200 1200 1200 1200 0 0 400 700 1200 300 1000 1200 0 2550 2550 1000 2550 80 1800 1000 1400 0 1000 1200 1200>;
 		battery,full_check_current_1st = <240 0 0 240 240 240 240 240 240 0 240 240 240 240 240 0 0 240 240 240 240 240 240 0 240 240 240 240 0 240 240 240 0 240 240 240>;
 		battery,full_check_current_2nd = <120 0 0 120 120 120 120 120 120 0 120 120 120 120 120 0 0 120 120 120 120 120 120 0 120 120 120 120 0 120 120 120 0 120 120 120>;
@@ -217,8 +215,8 @@
 		battery,chg_high_temp_1st = <530>;
 		battery,chg_high_temp_2nd = <530>;
 		battery,chg_high_temp_recovery = <525>;
-		battery,chg_charging_limit_current = <1500>;
-		battery,chg_charging_limit_current_2nd = <1500>;
+		battery,chg_charging_limit_current = <1300>;
+		battery,chg_charging_limit_current_2nd = <1300>;
 		battery,chg_skip_check_capacity = <10>;
 		battery,chg_skip_check_time = <600>;
 
@@ -287,8 +285,6 @@
 			300 4240 4140 4140 87	/*4.24*/
 			1000 4190 4090 4090 83	/*4.19*/
 			>;
-
-		battery,data_ver = <0x2>; 
 	};
 
 	s2mpu06-charger {
