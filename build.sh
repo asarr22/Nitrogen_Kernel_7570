@@ -34,15 +34,16 @@ PAGE_SIZE=2048
 DTB_PADDING=0
 
 DEFCONFIG=on5xelte_00_defconfig
-DEFCONFIG_S7EDGE=on5xelte_00_defconfig
-DEFCONFIG_S7FLAT=on5xelte_00_defconfig
+DEFCONFIG_G570M=on5xelte_01_defconfig
+DEFCONFIG_G570F=on5xelte_00_defconfig
+DEFCONFIG_J3y17=exynos7570-j3y17lte_defconfig
 
-export K_VERSION="v2"
+export K_VERSION="v2.5"
 export K_NAME="Nitrogen"
 export REVISION="official"
 export KBUILD_BUILD_VERSION="1"
-S7DEVICE="PIE"
-EDGE_LOG=Edge_build.log
+J5_Prime_V="PIE"
+FLATM_LOG=J5P_build_M.log
 FLAT_LOG=J5P_build.log
 PORT=0
 
@@ -150,8 +151,8 @@ FUNC_BUILD_RAMDISK()
 	cd temp
 
 	case $MODEL in
-	J400)
-		echo "Ramdisk for J400"
+	J330)
+		echo "Ramdisk for J330"
 		;;
 	G570)
 		echo "Ramdisk for G570"
@@ -231,21 +232,41 @@ echo ""
 echo "Build Kernel for:"
 echo ""
 echo "J5 Prime"
-echo "(1) J5 Prime"
-echo "(2) Quit"
+echo "(1) J5 Prime G570F\Y"
+echo "(2) J5 Prime G570M"
+echo "(3) J3 2017 J330"
+echo "(4) Quit"
 echo ""
 read -p "Select an option to compile the kernel " prompt
 
 
 if [ $prompt == "1" ]; then
     MODEL=G570
-    DEVICE=$S7DEVICE
-    KERNEL_DEFCONFIG=$DEFCONFIG_S7FLAT
+    DEVICE=$J5_Prime_V
+    KERNEL_DEFCONFIG=$DEFCONFIG_G570F
     LOG=$FLAT_LOG
     export KERNEL_VERSION="$K_NAME-Pie-$K_VERSION"
-    echo "J5 Prime G570 Selected"
+    echo "J5 Prime G570F\Y Selected"
     ZIP_NAME=$K_NAME-$MODEL-O-$K_VERSION.zip
     MAIN
-elif [ $prompt == "2" ]; then
+if [ $prompt == "2" ]; then
+    MODEL=G570
+    DEVICE=$J5_Prime_V
+    KERNEL_DEFCONFIG=$DEFCONFIG_G570M
+    LOG=$FLATM_LOG
+    export KERNEL_VERSION="$K_NAME-Pie-$K_VERSION"
+    echo "J5 Prime G570M Selected"
+    ZIP_NAME=$K_NAME-$MODEL-O-$K_VERSION.zip
+    MAIN	
+if [ $prompt == "3" ]; then
+    MODEL=J330
+    DEVICE=$J5_Prime_V
+    KERNEL_DEFCONFIG=$DEFCONFIG_J3y17
+    LOG=$FLAT_LOG
+    export KERNEL_VERSION="$K_NAME-Pie-$K_VERSION"
+    echo "J3 2017 J330 Selected"
+    ZIP_NAME=$K_NAME-$MODEL-O-$K_VERSION.zip
+    MAIN		
+elif [ $prompt == "4" ]; then
     exit 1
 fi
