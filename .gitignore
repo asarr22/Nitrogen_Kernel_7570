@@ -194,3 +194,4 @@ Nitrogen/A.I.K/bin/linux/x86_64/futility
 Nitrogen/A.I.K/bin/linux/x86_64/kernel_dump
 Nitrogen/A.I.K/bin/linux/x86_64/loki_tool
 Nitrogen/A.I.K/bin/linux/x86_64/lz4
+arch/arm64/boot/boot.img-zImage
