@@ -139,7 +139,7 @@
 		compatible = "samsung,exynos-sc-cpufreq";
 
                 cl0_idx_num = <17>;
-                cl0_max_support_idx = <5>;
+                cl0_max_support_idx = <6>;
                 cl0_min_support_idx = <16>;
                 cl0_boot_max_qos = <1378000>;
                 cl0_boot_min_qos = <1378000>;
