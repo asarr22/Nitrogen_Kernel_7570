@@ -75,12 +75,12 @@ void __iomem *g3d1_outstanding_regs;
 
 /*  clk,vol,abb,min,max,down stay, pm_qos mem, pm_qos int, pm_qos cpu_kfc_min, pm_qos cpu_egl_max */
 static gpu_dvfs_info gpu_dvfs_table_default[] = {
- 	{1001, 900000, 0, 98, 100, 1, 0, 802000, 400000, 1286000, CPU_MAX},
+ 	{1001, 900000, 0, 98, 100, 1, 0, 802000, 400000, 1378000, CPU_MAX},
 	{830, 900000, 0, 98, 100, 5, 0, 666000, 467000, 1144000, CPU_MAX},
 	{666, 900000, 0, 98,  99, 3, 0, 666000, 467000, 962000, CPU_MAX},
 	{553, 900000, 0, 90,  99, 5, 0, 666000, 467000, 757000, CPU_MAX},
-	{415, 900000, 0, 70,  98, 3, 0, 415000, 467000, 676000, CPU_MAX},
-	{350, 850000, 0, 10,  88, 1, 0, 415000, 467000, 546000, CPU_MAX},
+	{415, 900000, 0, 70,  90, 3, 0, 415000, 415000, 676000, CPU_MAX},
+	{350, 850000, 0, 10,  88, 1, 0, 415000, 415000, 546000, CPU_MAX},
 	{266, 800000, 0, 10,  70, 1, 0,  415000, 415000,       0, CPU_MAX},
 };
 
@@ -454,7 +454,6 @@ struct gpu_control_ops *gpu_get_control_ops(void)
 
 #ifdef CONFIG_REGULATOR
 extern int s2m_set_dvs_pin(bool gpio_val);
-
 
 int gpu_regulator_init(struct exynos_context *platform)
 {

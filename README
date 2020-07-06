@@ -1,3 +1,5 @@
+        Nitrogen Kernel For Exynos 7570 Soc
+
          Linux kernel release 3.x <http://kernel.org/>
 
 These are the release notes for Linux version 3.  Read them carefully,
@@ -19,6 +21,151 @@ WHAT IS LINUX?
   accompanying COPYING file for more details. 
 
 ON WHAT HARDWARE DOES IT RUN?
+
+sarr@linux:/media/sarr/Principlale/Users/ADMIN/Documents/Oripie$ ./build_kernel.sh
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/basic/bin2c
+drivers/media/mtv/sms3230/Kconfig:51:warning: ignoring type redefinition of 'SMS_USB_DRV' from 'tristate' to 'boolean'
+drivers/media/mtv/sms3230/Kconfig:58:warning: ignoring type redefinition of 'SMS_SDIO_DRV' from 'tristate' to 'boolean'
+arch/Kconfig:392:warning: choice value must have a prompt
+arch/Kconfig:394:warning: defaults for choice values not supported
+arch/arm64/configs/on5xelte_defconfig:222:warning: override: CC_STACKPROTECTOR_STRONG changes choice state
+arch/arm64/configs/on5xelte_defconfig:454:warning: override: reassigning to symbol TIMA
+arch/arm64/configs/on5xelte_defconfig:4308:warning: override: reassigning to symbol FS_POSIX_ACL
+#
+# configuration written to .config
+#
+include/config/auto.conf.cmd:1059: la cible « fs/sdcardfs/p/Kconfig » apparaît plus d'une fois dans la même règle.
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+scripts/kconfig/conf --silentoldconfig Kconfig
+drivers/media/mtv/sms3230/Kconfig:51:warning: ignoring type redefinition of 'SMS_USB_DRV' from 'tristate' to 'boolean'
+drivers/media/mtv/sms3230/Kconfig:58:warning: ignoring type redefinition of 'SMS_SDIO_DRV' from 'tristate' to 'boolean'
+arch/Kconfig:392:warning: choice value must have a prompt
+arch/Kconfig:394:warning: defaults for choice values not supported
+include/config/auto.conf.cmd:1059: la cible « fs/sdcardfs/p/Kconfig » apparaît plus d'une fois dans la même règle.
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+INFO: CC is /home/sarr/aarch64-linux-android-4.9/bin/aarch64-linux-android-gcc
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  HOSTCC  scripts/kallsyms
+  CALL    scripts/checksyscalls.sh
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+  HOSTCC  scripts/sortextable
+make[1]: rien à faire pour « dtbs ».
+make[1]: « include/generated/vdso-offsets.h » est à jour.
+  CHK     include/generated/compile.h
+  GZIP    kernel/config_data.gz
+  CHK     kernel/config_data.h
+  UPD     kernel/config_data.h
+  CC      kernel/configs.o
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+  LD      kernel/built-in.o
+  LD      fs/built-in.o
+make[1]: ***  Aucune règle pour fabriquer la cible « block/bfq-iosched.o », nécessaire pour « block/built-in.o ». Arrêt.
+make[1]: *** Attente des tâches non terminées....
+  CC      block/maple-iosched.o
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+block/maple-iosched.c:20:34: fatal error: linux/state_notifier.h: No such file or directory
+ #include <linux/state_notifier.h>
+                                  ^
+compilation terminated.
+scripts/Makefile.build:257: recipe for target 'block/maple-iosched.o' failed
+make[1]: *** [block/maple-iosched.o] Error 1
+Makefile:1010: recipe for target 'block' failed
+make: *** [block] Error 2
+make: *** Attente des tâches non terminées....
+  CC      drivers/base/power/main.o
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+  CC      drivers/base/power/wakeup.o
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+  LD      drivers/base/power/built-in.o
+  LD      drivers/base/built-in.o
+  CC      drivers/gpu/arm/t72x/r28p0/platform/exynos/gpu_custom_interface.o
+Android GCC has been deprecated in favor of Clang, and will be removed from
+Android in 2020-01 as per the deprecation plan in:
+https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/master/GCC_4_9_DEPRECATION.md
+
+
+In file included from drivers/gpu/arm/t72x/r28p0/platform/exynos/gpu_custom_interface.c:21:0:
+include/linux/sysfs_helpers.h:49:42: error: backslash-newline at end of file [-Werror]
+ #define sanitize_min_max(val, min, max)  \
+ ^
+  LD      drivers/hsi/clients/built-in.o
+cc1: all warnings being treated as errors
+scripts/Makefile.build:257: recipe for target 'drivers/gpu/arm/t72x/r28p0/platform/exynos/gpu_custom_interface.o' failed
+make[4]: *** [drivers/gpu/arm/t72x/r28p0/platform/exynos/gpu_custom_interface.o] Error 1
+scripts/Makefile.build:402: recipe for target 'drivers/gpu/arm/t72x/r28p0' failed
+make[3]: *** [drivers/gpu/arm/t72x/r28p0] Error 2
+scripts/Makefile.build:402: recipe for target 'drivers/gpu/arm' failed
+make[2]: *** [drivers/gpu/arm] Error 2
+scripts/Makefile.build:402: recipe for target 'drivers/gpu' failed
+make[1]: *** [drivers/gpu] Error 2
+make[1]: *** Attente des tâches non terminées....
+  LD      drivers/hsi/controllers/built-in.o
+  LD      drivers/hsi/built-in.o
+Makefile:1010: recipe for target 'drivers' failed
+make: *** [drivers] Error 2
+sarr@linux:/media/sarr/Principlale/Users/ADMIN/Documents/Oripie$ 
+
 
   Although originally developed first for 32-bit x86-based PCs (386 or higher),
   today Linux also runs on (at least) the Compaq Alpha AXP, Sun SPARC and

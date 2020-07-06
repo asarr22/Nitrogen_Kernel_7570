@@ -76,6 +76,10 @@ config DEBUG_PKTLOG
 	bool "IPC pcap logging feature"
 	default n
 
+config MODEM_PIE_REV
+	bool "Android 9.0 Bootloader/Modem Support"
+	default n
+
 config LINK_CONTROL_MSG_IOSM
 	bool "Control Message Type: IPC Over Shared Memory (IOSM)"
 	default n

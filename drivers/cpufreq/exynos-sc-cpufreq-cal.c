@@ -117,9 +117,6 @@ static int exynos_sc_cpufreq_init_cal_table(void)
                         ptr_temp_table[cal_max_support_idx].rate,
                         ptr_temp_table[ptr->max_support_idx].rate);
 
-        if (ptr->max_support_idx < cal_max_support_idx)
-                ptr->max_support_idx = cal_max_support_idx;
-
         pr_info("CPUFREQ of CL0 Current max freq %lu KHz\n",
                                 ptr_temp_table[ptr->max_support_idx].rate);
 

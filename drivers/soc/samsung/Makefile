@@ -37,3 +37,4 @@ obj-$(CONFIG_EXYNOS_ACPM)    	+= acpm/
 obj-$(CONFIG_USI) += usi.o
 
 obj-$(CONFIG_SEC_INCELL) += sec_incell.o
+obj-$(CONFIG_STATE_NOTIFIER)	+= state_notifier.o

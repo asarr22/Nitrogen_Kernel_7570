@@ -33,6 +33,8 @@ modules.builtin
 *.lzo
 *.patch
 *.gcno
+*.tmp_vmlinux2
+*.tmp_vmlinux1
 
 #
 # Top-level generic files
@@ -160,3 +162,35 @@ arch/arm64/configs/tmp_defconfig
 arch/arm64/boot/boot.img-zImage
 arch/arm64/boot/boot.img-zImage
 *.img-zImage
+*.img
+Nitrogen/Out/NitrogenKernel-V3.0-G570X-OneUI-20200425.zip
+*.zip
+Nitrogen/A.I.K/authors.txt
+Nitrogen/A.I.K/bin/androidbootimg.magic
+Nitrogen/A.I.K/bin/avb/verity.pk8
+Nitrogen/A.I.K/bin/avb/verity.x509.pem
+Nitrogen/A.I.K/bin/BootSignature.jar
+Nitrogen/A.I.K/bin/chromeos/empty
+Nitrogen/A.I.K/bin/chromeos/kernel.keyblock
+Nitrogen/A.I.K/bin/chromeos/kernel_data_key.vbprivk
+Nitrogen/A.I.K/bin/linux/i686/blobpack
+Nitrogen/A.I.K/bin/linux/i686/blobunpack
+Nitrogen/A.I.K/bin/linux/i686/dhtbsign
+Nitrogen/A.I.K/bin/linux/i686/dumpimage
+Nitrogen/A.I.K/bin/linux/i686/elftool
+Nitrogen/A.I.K/bin/linux/i686/futility
+Nitrogen/A.I.K/bin/linux/i686/kernel_dump
+Nitrogen/A.I.K/bin/linux/i686/loki_tool
+Nitrogen/A.I.K/bin/linux/i686/pxa-unpackbootimg
+Nitrogen/A.I.K/bin/linux/i686/rkcrc
+Nitrogen/A.I.K/bin/linux/i686/unpackbootimg
+Nitrogen/A.I.K/bin/linux/i686/unpackelf
+Nitrogen/A.I.K/bin/linux/x86_64/blobpack
+Nitrogen/A.I.K/bin/linux/x86_64/blobunpack
+Nitrogen/A.I.K/bin/linux/x86_64/dhtbsign
+Nitrogen/A.I.K/bin/linux/x86_64/dumpimage
+Nitrogen/A.I.K/bin/linux/x86_64/elftool
+Nitrogen/A.I.K/bin/linux/x86_64/futility
+Nitrogen/A.I.K/bin/linux/x86_64/kernel_dump
+Nitrogen/A.I.K/bin/linux/x86_64/loki_tool
+Nitrogen/A.I.K/bin/linux/x86_64/lz4

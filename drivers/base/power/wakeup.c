@@ -22,8 +22,6 @@
 
 #include "power.h"
 
-#include <linux/moduleparam.h>
-
 #ifdef CONFIG_BOEFFLA_WL_BLOCKER
 #include "boeffla_wl_blocker.h"
 

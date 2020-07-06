@@ -94,6 +94,9 @@ config EXYNOS_RGT
 
 source "drivers/soc/samsung/acpm/Kconfig"
 
+config STATE_NOTIFIER
+    	bool "State Notifier"
+
 endif #SOC_SAMSUNG
 
 config SEC_INCELL

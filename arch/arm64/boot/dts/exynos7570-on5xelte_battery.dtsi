@@ -246,8 +246,8 @@
 		battery,recharging_total_time = <5400>;
 		battery,charging_reset_time = <0>;
 
-		battery,chg_float_voltage = <4400>;
-		battery,chg_float_voltage2 = <4350>;
+		battery,chg_float_voltage = <4300>;
+		battery,chg_float_voltage2 = <4300>;
 
 		battery,self_discharging_temp_block = <600>;
 		battery,self_discharging_volt_block = <4250>;
