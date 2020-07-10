@@ -1,7 +1,7 @@
 /*
  * SAMSUNG UNIVERSAL7570 board device tree source
  *
- * Copyright (c) 2013 Samsung Electronics Co., Ltd.
+ * Copyright (c) 2018 Samsung Electronics Co., Ltd.
  *		http://www.samsung.com
  *
  * This program is free software; you can redistribute it and/or modify
@@ -161,7 +161,7 @@
 		battery,temp_table_data = <900 850 800 750 700 650 600 550 500 470 450 430 400 350 300 250
 								200 150 100 50 0 (-30) (-50) (-100) (-150) (-200)>;
 
-		battery,input_current_limit = <2000 460 460 2000 480 900 2000 480 2000 0 820 820 820 2000 2000 0 0 400 700 2000 300 2000 2000 0 1667 1667 2000 1667 80 1800 1667 1400 2000 2000 820 820>;
+		battery,input_current_limit = <1600 460 460 1600 480 900 1600 480 1600 0 820 820 820 1600 1600 0 0 400 700 1600 300 1600 1600 0 1667 1667 1600 1667 80 1800 1667 1400 1600 1600 820 820>;
 		battery,fast_charging_current = <2050 0 0 2050 800 2050 1000 800 2050 0 2050 2050 2050 2050 2050 0 0 400 700 1200 300 1000 1200 0 2550 2550 1000 2550 80 1800 1000 1400 0 1000 2050 2050>;
 		battery,full_check_current_1st = <240 0 0 240 240 240 240 240 240 0 240 240 240 240 240 0 0 240 240 240 240 240 240 0 240 240 240 240 0 240 240 240 0 240 240 240>;
 		battery,full_check_current_2nd = <120 0 0 120 120 120 120 120 120 0 120 120 120 120 120 0 0 120 120 120 120 120 120 0 120 120 120 120 0 120 120 120 0 120 120 120>;
@@ -215,7 +215,7 @@
 		battery,chg_high_temp_1st = <530>;
 		battery,chg_high_temp_2nd = <530>;
 		battery,chg_high_temp_recovery = <525>;
-		battery,chg_charging_limit_current = <2000>;
+		battery,chg_charging_limit_current = <1600>;
 		battery,chg_charging_limit_current_2nd = <2050>;
 		battery,chg_skip_check_capacity = <10>;
 		battery,chg_skip_check_time = <600>;

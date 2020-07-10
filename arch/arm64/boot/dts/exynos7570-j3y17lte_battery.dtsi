@@ -162,7 +162,7 @@
 		battery,temp_table_data = <900 850 800 750 700 650 600 550 500 450 430 400 350 300 250
 						200 150 100 50 0 (-30) (-50) (-100) (-150) (-200)>;
 
-		battery,input_current_limit = <1000 460 460 1000 460 900 1000 460 1000 0 820 820 820 1000 1000 0 0 400 700 1000 300 1000 1000 0 1667 1667 1000 1667 80 1800 1667 1400 1000 1000 820 820 460>;
+		battery,input_current_limit = <1600 460 460 1600 460 900 1600 460 1600 0 820 820 820 1600 1600 0 0 400 700 1600 300 1600 1600 0 1667 1667 1600 1667 80 1800 1667 1400 1600 1600 820 820 460>;
 		battery,fast_charging_current = <1200 0 0 1200 460 1200 1000 460 1200 0 1200 1200 1200 1200 1200 0 0 400 700 1200 300 1000 1200 0 2550 2550 1000 2550 80 1800 1000 1400 0 1000 1200 1200 0>;
 		battery,full_check_current_1st = <240 0 0 240 240 240 240 240 240 0 240 240 240 240 240 0 0 240 240 240 240 240 240 0 240 240 240 240 0 240 240 240 0 240 240 240 0>;
 		battery,full_check_current_2nd = <120 0 0 120 120 120 120 120 120 0 120 120 120 120 120 0 0 120 120 120 120 120 120 0 120 120 120 120 0 120 120 120 0 120 120 120 0>;
@@ -225,8 +225,8 @@
 		battery,chg_high_temp_1st = <530>;
 		battery,chg_high_temp_2nd = <530>;
 		battery,chg_high_temp_recovery = <525>;
-		battery,chg_charging_limit_current = <1300>;
-		battery,chg_charging_limit_current_2nd = <1300>;
+		battery,chg_charging_limit_current = <1600>;
+		battery,chg_charging_limit_current_2nd = <2050>;
 		battery,chg_skip_check_capacity = <10>;
 		battery,chg_skip_check_time = <600>;
 
@@ -246,6 +246,8 @@
 		battery,recharge_condition_type = <4>; /* SEC_BATTERY_RECHARGE_CONDITION_VCELL */
 		battery,recharge_condition_soc = <98>;
 		battery,recharge_condition_vcell = <4250>;
+
+
 
 		battery,charging_total_time = <21600>;
 		battery,recharging_total_time = <5400>;

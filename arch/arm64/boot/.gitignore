@@ -1,4 +1,1 @@
-Image
-Image.gz
-Image.gz-dtb
-boot.img-zImage
+*.dtb
