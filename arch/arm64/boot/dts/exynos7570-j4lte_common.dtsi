@@ -342,11 +342,12 @@
 		/* gpu cooling related table */
 		gpu_idx_num = <5>;
 		/* flags, driver_data(index), frequency */
-		gpu_cooling_table = < 0 0 830000
-				      0 1 666000
+		gpu_cooling_table = < 0 0 962000
+				      0 1 830000
 				      0 2 553000
-				      0 3 415000
-				      0 4 TABLE_END>;
+				      0 3 666000
+					0 4 415000
+				      0 5 TABLE_END>;
 	};
 
 	pinctrl@139F0000 {
@@ -810,7 +811,8 @@
 			#define DVFS_MIF_L1 700000
 			#define DVFS_MIF_L2 666000
 			#define DVFS_MIF_L3 415000
-
+			#define DVFS_MIF_L4 333000
+			#define DVFS_MIF_L5 222000
 			table0 {
 				desc = "HAL1 version";
 
@@ -1598,7 +1600,7 @@
 			net_boost,table= <
 				30 1274000 0 415000 0 0 0
 				50 1378000 0 415000 0 0 0
-				90 1378000 0 666000 0 1 1
+				90 1378000 0 830000 0 1 1
 				>;
 		};
 		boot_device@4 {
@@ -1608,7 +1610,7 @@
 			net_boost,table= <
 				10 1040000 0 415000 0 0 0
 				60 1378000 0 666000 0 1 1
-				120 1378000 0 666000 0 1 1
+				120 1378000 0 830000 0 1 1
 				>;
 		 };
 		/*

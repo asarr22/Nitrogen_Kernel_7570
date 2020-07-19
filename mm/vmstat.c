@@ -797,9 +797,6 @@ const char * const vmstat_text[] = {
 	"nr_anon_transparent_hugepages",
 	"nr_free_cma",
 
-#ifdef CONFIG_UKSM
-	"nr_uksm_zero_pages",
-#endif
 	/* enum writeback_stat_item counters */
 	"nr_dirty_threshold",
 	"nr_dirty_background_threshold",
@@ -1227,9 +1224,7 @@ static int vmstat_show(struct seq_file *m, void *arg)
 	unsigned long *l = arg;
 	unsigned long off = l - (unsigned long *)m->private;
 
-	seq_puts(m, vmstat_text[off]);
-	seq_put_decimal_ull(m, ' ', *l);
-	seq_putc(m, '\n');
+	seq_printf(m, "%s %lu\n", vmstat_text[off], *l);
 	return 0;
 }
 
